@@ -9,19 +9,20 @@
     <div class="wrap">
         <div class="floatleft">
             <h1>Nasa HQ - Managment Software</h1>
+            <h2>Bank ${{money}}</h2>
             <h2>Rockets per second {{rps}}</h2>
             <form ng-submit="addRocket()">
-                    <button type="submit" class="btn btn-Rocket">Buy rocket!</button>        
+                    <button type="submit" class="btn btn-Rocket">Buy rocket! ${{rocketCost}}</button>        
                     Current number of rockets {{rockets}}.</br>
                     Each rocket launches and lands in 10 seconds.
             </form>
             <form ng-submit="addFuelTruck()">
-                    <button type="submit" class="btn btn-Truck">Buy fuel truck!</button>            
+                    <button type="submit" class="btn btn-Truck">Buy fuel truck! ${{truckCost}}</button>            
                     Current fuel trucks {{trucks}}.</br>
                     Each fuel truck can get a rocket fueled in 2 seconds.
             </form>
             <form ng-submit="addLaunchPad()">
-                    <button type="submit" class="btn btn-Pad">Buy launch pad!</button>
+                    <button type="submit" class="btn btn-Pad">Buy launch pad! ${{padCost}}</button>
                     Current launch pads {{pads}}.</br>
                     Each pad launches a rocket every 5 seconds.
             </form>
