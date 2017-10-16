@@ -1,0 +1,37 @@
+<html>
+<head>
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
+        <script src="app.js"></script>  
+        <link href="style.css" rel="stylesheet">
+</head>
+<body ng-app="clicker" ng-controller="clickCtrl">
+    <div class="wrap">
+        <div class="floatleft">
+            <h1>Nasa HQ - Managment Software</h1>
+            <h2>Rockets per second {{rps}}</h2>
+            <form ng-submit="addRocket()">
+                    <button type="submit" class="btn btn-Rocket">Buy rocket!</button>        
+                    Current number of rockets {{rockets}}.</br>
+                    Each rocket launches and lands in 10 seconds.
+            </form>
+            <form ng-submit="addFuelTruck()">
+                    <button type="submit" class="btn btn-Truck">Buy fuel truck!</button>            
+                    Current fuel trucks {{trucks}}.</br>
+                    Each fuel truck can get a rocket fueled in 2 seconds.
+            </form>
+            <form ng-submit="addLaunchPad()">
+                    <button type="submit" class="btn btn-Pad">Buy launch pad!</button>
+                    Current launch pads {{pads}}.</br>
+                    Each pad launches a rocket every 5 seconds.
+            </form>
+            <form ng-submit="workHarder()">
+                    <button type="submit" class="btn btn-Work">WORK HARDER!</button>
+                    Increase productivity!
+            </form>
+        </div>
+        <div class="floatright">Animate stuff here</div>
+        <div style="clear: both;">
+    </div>
+</body>
+</html>
