@@ -10,7 +10,7 @@
         <div class="floatleft">
             <h1>Nasa HQ - Managment Software</h1>
             <h2>Bank ${{money}}</h2>
-            <h2>Rockets per second {{rps}}</h2>
+            <h2>Rockets per second {{30000/timePerRocket}}</h2>
             <form ng-submit="addRocket()">
                     <button type="submit" class="btn btn-Rocket">Buy rocket! ${{rocketCost}}</button>        
                     Current number of rockets {{rockets}}.</br>
@@ -31,7 +31,9 @@
                     Increase productivity!
             </form>
         </div>
-        <div class="floatright">Animate stuff here</div>
+        <div class="floatright">
+              <img src="nasaLogo.jpg" width="480px" height="480px">  
+        </div>
         <div style="clear: both;">
     </div>
 </body>

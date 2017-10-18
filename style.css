@@ -6,12 +6,12 @@
     float:left; 
     width: 60%;
     background-color: gray;
-    height: 400px;
+    height: 480px;
+    color: white;
 }
 
 .floatright {
 float: right;
-    background-color: darkblue;
-    height: 400px;
+    height: 480px;
     width: 40%;
 }
