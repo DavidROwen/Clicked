@@ -4,14 +4,15 @@ angular.module('clicker', [])
         
         $scope.rps = 0.1;
         $scope.rockets = 1;
-        $scope.rocketCost = 20;
+        $scope.rocketCost = 30;
         $scope.rocketMult = 5;
         $scope.moneyPerRocket = 5;
-        $scope.trucks = 1;
-        $scope.truckCost = 5;
-        $scope.truckMult = 5
+        $scope.trucks = 0;
+        $scope.truckCost = 10;
+        $scope.truckMult = 5;
+        $scope.trucksAtMax = false;
         $scope.scientists = 1;
-        $scope.scientistCost = 10;
+        $scope.scientistCost = 15;
         $scope.scientistMult = 5;
         $scope.motivation = 0;
         $scope.money = 20;
@@ -32,28 +33,31 @@ angular.module('clicker', [])
         }
 
         // Adds a fuel truck and modifies the rocket rate
-        $scope.addFuelTruck = function(){
+        $scope.addFuelTruck = function() {
             if ($scope.truckCost <= $scope.money){
                 $scope.trucks++;
                 $scope.money = $scope.money - $scope.truckCost;
                 $scope.totalTimeToLaunch = ($scope.totalTimeToLaunch - 0.2).toFixed(2);
                 //$scope.timeMulti = $scope.timeMulti + $scope.truckMult;
-                $scope.updateTime()
+                $scope.updateTime();
+                if ($scope.trucks == 45) {
+                    $scope.trucksAtMax = true;
+                }
             }
         }
 
         // Adds a launch pad and modifies the rocket rate
-        $scope.addScientist = function(){
-            if ($scope.padCost <= $scope.money){
-                $scope.pads++;
+        $scope.addScientist = function() {
+            if ($scope.scientistCost <= $scope.money){
+                $scope.scientists++;
                 $scope.money = $scope.money - $scope.scientistCost;
-                $scope.moneyPerRocket = ($scope.moneyPerRocket + 0.5).toFixed(2);
+                $scope.moneyPerRocket += 0.50;
                 //$scope.timeMulti = $scope.timeMulti + $scope.padMult;
                 $scope.updateTime()
             }
         }
 
-        // Implement some effect for motivation to do
+        // Increases money by 1
         $scope.panhandle = function() {
             $scope.money++;  
         }
