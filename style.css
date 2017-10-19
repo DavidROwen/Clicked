@@ -4,16 +4,24 @@
 
 .floatleft {
     float:left; 
-    width: 60%;
+    width: 50%;
     background-color: slategray;
-    height: 640px;
+    height: 720px;
     color: white;
 }
 
 .floatright {
 float: right;
     align-content: center;
-    height: 640px;
+    height: 720px;
     width: 40%;
     background-color: #0a76b6
+}
+
+button{
+    color: black;
+}
+
+body {
+    padding: 10px;
 }
