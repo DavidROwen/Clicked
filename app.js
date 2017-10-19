@@ -1,5 +1,5 @@
 angular.module('clicker', [])
-.controller("clickCtrl", ['$scope', '$interval', 
+.controller("clickCtrl", ['$scope', '$interval', '$window', 
     function($scope, $interval){
         
         $scope.rps = 0.1;
@@ -11,7 +11,7 @@ angular.module('clicker', [])
         $scope.truckCost = 10;
         $scope.truckMult = 5;
         $scope.trucksAtMax = false;
-        $scope.scientists = 1;
+        $scope.scientists = 0;
         $scope.scientistCost = 15;
         $scope.scientistMult = 5;
         $scope.motivation = 0;
@@ -60,6 +60,10 @@ angular.module('clicker', [])
         // Increases money by 1
         $scope.panhandle = function() {
             $scope.money++;  
+        }
+
+        $scope.goToMars = function() {
+            $window.alert("You Win!");
         }
 
         // Call this every second or at least as frequently as each rocket is ready to launch
