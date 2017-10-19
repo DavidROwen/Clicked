@@ -2,33 +2,34 @@
 <head>
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
-        <script src="app.js"></script>  
+        <script src="app.js?version=2.3"></script>  
         <link href="style.css" rel="stylesheet">
 </head>
 <body ng-app="clicker" ng-controller="clickCtrl">
     <div class="wrap">
         <div class="floatleft">
-            <h1>Nasa HQ - Managment Software</h1>
-            <h2>Bank ${{money}}</h2>
-            <h2>Rockets per second {{30000/timePerRocket}}</h2>
+            <h1>Nasa HQ - Management Software</h1>
+            <h2>Bank: ${{money}}</h2>
+            <h2>Rockets per second: {{rps}}</h2>
+            <h2>Time to Next Launch: {{timeToLaunch}}</h2>
             <form ng-submit="addRocket()">
                     <button type="submit" class="btn btn-Rocket">Buy rocket! ${{rocketCost}}</button>        
-                    Current number of rockets {{rockets}}.</br>
-                    Each rocket launches and lands in 10 seconds.
+                    Rockets: {{rockets}}.</br>
+                    Each rocket makes ${{moneyPerRocket}} per launch.
             </form>
             <form ng-submit="addFuelTruck()">
                     <button type="submit" class="btn btn-Truck">Buy fuel truck! ${{truckCost}}</button>            
-                    Current fuel trucks {{trucks}}.</br>
-                    Each fuel truck can get a rocket fueled in 2 seconds.
+                    Fuel trucks: {{trucks}}.</br>
+                    Each fuel truck decreases the time to launch by 0.2 seconds.
             </form>
-            <form ng-submit="addLaunchPad()">
-                    <button type="submit" class="btn btn-Pad">Buy launch pad! ${{padCost}}</button>
-                    Current launch pads {{pads}}.</br>
-                    Each pad launches a rocket every 5 seconds.
+            <form ng-submit="addScientist()">
+                    <button type="submit" class="btn btn-Pad">Hire a new scientist! ${{scientistCost}}</button>
+                    Scientists: {{scientists}}.</br>
+                    Each scientist increases the income per rocket by $0.50.
             </form>
-            <form ng-submit="workHarder()">
-                    <button type="submit" class="btn btn-Work">WORK HARDER!</button>
-                    Increase productivity!
+            <form ng-submit="panhandle()">
+                    <button type="submit" class="btn btn-Work">Panhandle</button>
+                    Beg for money!
             </form>
         </div>
         <div class="floatright">
