@@ -1,10 +1,10 @@
 .wrap {
-    width: 100%;
+    width: 98%;
 }
 
 .floatleft {
     float:left; 
-    width: 50%;
+    width: 59%;
     background-color: slategray;
     height: 720px;
     color: white;
@@ -14,14 +14,19 @@
 float: right;
     align-content: center;
     height: 720px;
-    width: 40%;
-    background-color: #0a76b6
+    width: 39%;
+    background-color: #0a76b6;
 }
 
 button{
     color: black;
+    background-color: #0a76b6;
 }
 
 body {
     padding: 10px;
+}
+
+#logo{
+    align-content: center;
 }

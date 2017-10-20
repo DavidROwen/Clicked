@@ -4,7 +4,7 @@
         <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.19/angular.min.js"></script>
         <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.js"></script>
         <script src="app.js?version=2.7"></script>
-        <link href="style.css?version=1.1" rel="stylesheet">
+        <link href="style.css?version=1.4" rel="stylesheet">
         <!-- Latest compiled and minified CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
                 crossorigin="anonymous">
@@ -18,44 +18,32 @@
 
 <body ng-app="clicker" ng-controller="clickCtrl">
         <div class="wrap">
-                <div class="floatleft">
+                <div class="floatright">
+                </br>
+                        <img id="logo" src="nasaLogo.jpg" width="480px" height="480px">
+                </div>
+                <div style="padding: 5px;" class="floatleft">
                         <h1>Nasa HQ - Management Software</h1>
                         <h2>Bank: ${{money.toFixed(2)}}</h2>
-                        <h2>Rockets per second: {{rps}}</h2>
+                        <!-- <h2>Rockets per second: {{rps}}</h2> -->
                         <h2>Time to Next Launch: {{timeToLaunch}}</h2>
-                        <div>
+                        <div style="float: left; padding: 5px;">
                                 <b>Rockets:{{rockets}}</b></br>
                                 Each rocket makes ${{moneyPerRocket.toFixed(2)}} per launch.
                                 <div>
-                                <form style="float:left; padding: 5px;" ng-submit="addRocket()">
+                                        <form style="float:left; padding: 5px;" ng-submit="addRocket()">
                                         <button type="submit" class="btn btn-Rocket">Buy rocket! ${{rocketCost}}</button> 
-                                </form>
-                                <form style="float:left; padding: 5px;" ng-submit="addRocket10()">
+                                        </form>
+                                        <form style="float:left; padding: 5px;" ng-submit="addRocket10()">
                                         <button type="submit" class="btn btn-Rocket">10x ${{rocketCost*10}}</button>                
-                                </form>
-                                <form style="float:left; padding: 5px;" ng-submit="addRocket100()">
+                                        </form>
+                                        <form style="float:left; padding: 5px;" ng-submit="addRocket100()">
                                         <button type="submit" class="btn btn-Rocket">100x ${{rocketCost*100}}</button> 
-                                </form>
-                                <div style="clear: left;"></div>
+                                        </form>
+                                        <div style="clear: left;"></div>
                                 </div>
                         </div>
-                        <div>
-                                <b>Fuel trucks: {{trucks}}/45</b></br>
-                                Each fuel truck decreases the time to launch by 0.2 seconds.
-                                <div>
-                                <form style="float:left; padding: 5px;" ng-submit="addFuelTruck()">
-                                        <button type="submit" ng-disabled="trucksAtMax" class="btn btn-Truck">Buy fuel truck! ${{truckCost}}</button>                                
-                                </form>
-                                <form style="float:left; padding: 5px;" ng-submit="addFuelTruck10()">
-                                        <button type="submit" ng-disabled="trucksAtMax" class="btn btn-Truck">10x ${{truckCost * 10}}</button>                                
-                                </form>
-                                <form style="float:left; padding: 5px;" ng-submit="addFuelTruck100()">
-                                        <button type="submit" ng-disabled="trucksAtMax" class="btn btn-Truck">100x ${{truckCost * 100}}</button>                                
-                                </form>
-                                <div style="clear: left;"></div>
-                        </div>
-                        </div>
-                        <div>
+                        <div style="float: left; padding: 5px;">
                                 <b>Scientists: {{scientists}}</b></br>
                                 Each scientist increases the income per rocket by $0.50.
                                 <div>
@@ -71,19 +59,25 @@
                                         <div style="clear: left;">
                                 </div>
                         </div>
-                        <form ng-submit="panhandle()">
+                        <div style="float: left; padding: 5px;">
+                                <b>Fuel trucks: {{trucks}}/45</b></br>
+                                Each fuel truck decreases the time to launch by 0.2 seconds.
+                                <div>
+                                        <form style="float:left; padding: 5px;" ng-submit="addFuelTruck()">
+                                        <button type="submit" ng-disabled="trucksAtMax" class="btn btn-Truck">Buy fuel truck! ${{truckCost}}</button>                                
+                                        </form>
+                                        <div style="clear: left;"></div>
+                                </div>
+                        </div>
+                        <form style="padding: 5px;" ng-submit="panhandle()">
                                 <button type="submit" class="btn btn-Work">Panhandle</button> Beg for money!
                         </form>
-                        <form ng-submit="goToMars()">
+                        <form style="padding: 5px;"ng-submit="goToMars()">
                                 <button type="submit" class="btn btn-Work"><h1>Go to Mars!</h1></button>
                                 <b>$1,000,000</b>
                         </form>
                 </div>
-                <div class="floatright">
-                        <img src="nasaLogo.jpg" width="480px" height="480px">
-                </div>
-                <div style="clear: both;">
-                </div>
-</body>
 
+                <div style="clear: both;"></div>
+        </body>
 </html>

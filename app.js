@@ -26,9 +26,21 @@ angular.module('clicker', [])
             if ($scope.rocketCost <= $scope.money){
                 $scope.rockets++;
                 $scope.money = $scope.money - $scope.rocketCost;
-                //$scope.timeMulti = $scope.timeMulti + $scope.rocketMult;
                 $scope.updateTime()
-
+            }
+        }
+        $scope.addRocket10 = function(){
+            if ($scope.rocketCost*10 <= $scope.money){
+                $scope.rockets += 10;
+                $scope.money = $scope.money - $scope.rocketCost*10;
+                $scope.updateTime()
+            }
+        }
+        $scope.addRocket100 = function(){
+            if ($scope.rocketCost*100 <= $scope.money){
+                $scope.rockets += 100;
+                $scope.money = $scope.money - $scope.rocketCost*100;
+                $scope.updateTime()
             }
         }
 
@@ -38,7 +50,6 @@ angular.module('clicker', [])
                 $scope.trucks++;
                 $scope.money = $scope.money - $scope.truckCost;
                 $scope.totalTimeToLaunch = ($scope.totalTimeToLaunch - 0.2).toFixed(2);
-                //$scope.timeMulti = $scope.timeMulti + $scope.truckMult;
                 $scope.updateTime();
                 if ($scope.trucks == 45) {
                     $scope.trucksAtMax = true;
@@ -52,7 +63,22 @@ angular.module('clicker', [])
                 $scope.scientists++;
                 $scope.money = $scope.money - $scope.scientistCost;
                 $scope.moneyPerRocket += 0.50;
-                //$scope.timeMulti = $scope.timeMulti + $scope.padMult;
+                $scope.updateTime()
+            }
+        }
+        $scope.addScientist10 = function() {
+            if ($scope.scientistCost*10 <= $scope.money){
+                $scope.scientists += 10;
+                $scope.money = $scope.money - $scope.scientistCost*10;
+                $scope.moneyPerRocket += 0.50(100);
+                $scope.updateTime()
+            }
+        }
+        $scope.addScientist100 = function() {
+            if ($scope.scientistCost*100 <= $scope.money){
+                $scope.scientists += 100;
+                $scope.money = $scope.money - $scope.scientistCost*100;
+                $scope.moneyPerRocket += 0.50(100);
                 $scope.updateTime()
             }
         }
