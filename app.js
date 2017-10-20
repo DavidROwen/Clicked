@@ -1,6 +1,6 @@
 angular.module('clicker', [])
 .controller("clickCtrl", ['$scope', '$interval', '$window', 
-    function($scope, $interval){
+    function($scope, $interval, $window){
         
         $scope.rps = 0.1;
         $scope.rockets = 1;
@@ -70,7 +70,7 @@ angular.module('clicker', [])
             if ($scope.scientistCost*10 <= $scope.money){
                 $scope.scientists += 10;
                 $scope.money = $scope.money - $scope.scientistCost*10;
-                $scope.moneyPerRocket += 0.50(100);
+                $scope.moneyPerRocket += 0.50*100;
                 $scope.updateTime()
             }
         }
@@ -78,7 +78,7 @@ angular.module('clicker', [])
             if ($scope.scientistCost*100 <= $scope.money){
                 $scope.scientists += 100;
                 $scope.money = $scope.money - $scope.scientistCost*100;
-                $scope.moneyPerRocket += 0.50(100);
+                $scope.moneyPerRocket += 0.50*100;
                 $scope.updateTime()
             }
         }
@@ -89,7 +89,11 @@ angular.module('clicker', [])
         }
 
         $scope.goToMars = function() {
-            $window.alert("You Win!");
+            if($scope.money < 1000000){
+                $window.alert("You don't have enough $$$!");
+            }else {
+                $window.alert("You Win!");
+            }
         }
 
         // Call this every second or at least as frequently as each rocket is ready to launch

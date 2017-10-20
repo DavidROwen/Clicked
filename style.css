@@ -6,14 +6,14 @@
     float:left; 
     width: 59%;
     background-color: slategray;
-    height: 720px;
+    height: 764px;
     color: white;
 }
 
 .floatright {
 float: right;
     align-content: center;
-    height: 720px;
+    height: 764px;
     width: 39%;
     background-color: #0a76b6;
 }
